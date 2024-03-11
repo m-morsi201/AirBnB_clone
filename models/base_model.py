@@ -59,3 +59,69 @@ class BaseModel:
         MyDict['created_at'] = self.created_at.isoformat()
         MyDict['updated_at'] = self.updated_at.isoformat()
         return(MyDict)
+
+    @classmethod
+    def all(cls):
+        """
+        Class Method that Retrieve all current instances of cls.
+        """
+
+        return models.storage.find_all(cls.__name__)
+
+    @classmethod
+    def count(cls):
+        """
+        class method that Get the number
+        of all current instances of cls.
+        """
+
+        return len(models.storage.find_all(cls.__name__))
+
+    @classmethod
+    def create(cls, *args, **kwargs):
+        """
+        Class Method that creates an Instance.
+        """
+
+        new = cls(*args, **kwargs)
+        return new.id
+
+    @classmethod
+    def show(cls, instance_id):
+        """
+        Class Method thar retrieve an instance.
+        """
+
+        return models.storage.find_by_id(
+            cls.__name__,
+            instance_id
+        )
+
+    @classmethod
+    def destroy(cls, instance_id):
+        """
+        class method that deletes an instance.
+        """
+
+        return models.storage.delete_by_id(
+            cls.__name__,
+            instance_id
+        )
+
+    @classmethod
+    def update(cls, instance_id, *args):
+        """
+        class method that updates an instance.
+        """
+
+        if not len(args):
+            print("** attribute name missing **")
+            return
+        if len(args) == 1 and isinstance(args[0], dict):
+            args = args[0].items()
+        else:
+            args = [args[:2]]
+        for arg in args:
+            models.storage.update_one(
+                cls.__name__, instance_id, *arg
+            )
