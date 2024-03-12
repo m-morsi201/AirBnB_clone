@@ -52,7 +52,7 @@ class TestUser(unittest.TestCase):
         """
 
         self.assertIsNotNone(User.__doc__)
-    
+
     def tes_attr(self):
         self.assertEqual(MyUser.email, '')
         self.assertEqual(MyUser.password, '')
@@ -92,7 +92,7 @@ class TestUser(unittest.TestCase):
         """
         Method to check a save.
         """
-        
+
         MyUser = User()
         MyUser.save()
         self.assertNotEqual(MyUser.created_at, MyUser.updated_at)
