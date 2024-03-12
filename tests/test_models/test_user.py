@@ -97,6 +97,46 @@ class TestUser(unittest.TestCase):
         MyUser.save()
         self.assertNotEqual(MyUser.created_at, MyUser.updated_at)
 
+    def test_email(self):
+        """
+        Mehtod to Test that User has attr email,
+        and not an empty str.
+        """
+
+        MyUser = User()
+        self.assertTrue(hasattr(MyUser, "email"))
+        self.assertEqual(MyUser.email, "")
+
+    def test_password(self):
+        """
+        Method to test that User has attr password,
+        and it's an empty str
+        """
+
+        MyUser = User()
+        self.assertTrue(hasattr(MyUser, "password"))
+        self.assertEqual(MyUser.password, "")
+
+    def test_first_name(self):
+        """
+        Method to test that User has attr first_name,
+        and it's an empty str
+        """
+
+        MyUser = User()
+        self.assertTrue(hasattr(MyUser, "first_name"))
+        self.assertEqual(MyUser.first_name, "")
+
+    def test_last_name_attr(self):
+        """
+        Method to test that User has attr last_name,
+        and it's an empty str
+        """
+
+        MyUser = User()
+        self.assertTrue(hasattr(MyUser, "last_name"))
+        self.assertEqual(MyUser.last_name, "")
+
 
 if __name__ == "__main__":
     unittest.main()
