@@ -17,7 +17,7 @@ from models.review import Review
 
 """
 This module define a consule.py
-    that contains the entry point of the command interpreter
+    that contains the entry point of the command interpreter.
 """
 
 
