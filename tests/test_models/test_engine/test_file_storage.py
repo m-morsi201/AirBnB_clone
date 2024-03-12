@@ -69,7 +69,7 @@ class FileStorageTest(unittest.TestCase):
         try:
             os.remove("file.json")
         except():
-            continue
+            pass
         with open("file.json", "w") as W:
             W.write("{}")
         with open("file.json", "r") as R:
