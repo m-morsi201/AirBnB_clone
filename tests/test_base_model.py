@@ -54,7 +54,7 @@ class BaseModelTest(unittest.TestCase):
         Method that checks user attributes.
         """
 
-        base = BaseModel()
+        base1 = BaseModel()
         base2 = BaseModel()
         self.assertTrue(hasattr(base1, "created_at"))
         self.assertTrue(hasattr(base1, "updated_at"))
