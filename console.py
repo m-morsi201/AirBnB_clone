@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This module define a consule.py
+    that contains the entry point of the command interpreter.
+"""
 
 import cmd
 import json
@@ -13,12 +17,6 @@ from models.amenity import Amenity
 from models.place import Place
 from models import storage
 from models.review import Review
-
-
-"""
-This module define a consule.py
-    that contains the entry point of the command interpreter.
-"""
 
 
 class HBNBCommand(cmd.Cmd):
