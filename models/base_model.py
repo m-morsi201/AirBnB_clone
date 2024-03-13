@@ -60,7 +60,7 @@ class BaseModel:
         MyDict['__class__'] = self.__class__.__name__
         MyDict['created_at'] = self.created_at.isoformat()
         MyDict['updated_at'] = self.updated_at.isoformat()
-        return(MyDict)
+        return (MyDict)
 
     @classmethod
     def all(cls):
